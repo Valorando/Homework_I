@@ -42,5 +42,29 @@ int main()
 	cout << "End code execution... " << endl;
 	chrono::duration<float> duration = end - start;
 	cout << "Duration: " << duration.count() << " s." << endl;
+
+	int circle_radius;
+
+	cout << "Circle." << endl;
+	cout << "Enter the radius of the circle: " << endl;
+	while (!(cin >> circle_radius)) {
+		cout << "Enter the radius of the circle: " << endl;
+		cin.clear();
+		cin.get();
+	}
+	cout << "Circle radius: " << circle_radius << endl;
+	cout << "Size set, running..." << endl;
+	cout << "Your circle: " << endl;
+	cout << endl;
+	for (int i = 0; i < 2 * circle_radius; i++)
+	{
+		for (int j = 0; j < 2 * circle_radius; j++)
+		{
+			if ((i - circle_radius) * (i - circle_radius) + (j - circle_radius) * (j - circle_radius) < circle_radius * circle_radius)
+				cout << "*";
+			else cout << " ";
+		}
+		cout << endl;
+	}
 }
 
